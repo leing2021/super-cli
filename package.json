@@ -1,8 +1,12 @@
 {
   "name": "@leing2021/super-cli",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "description": "极简 CLI 路由器 — 统一入口，自动路由到 OpenCLI 或 CLI-Anything 后端",
+  "keywords": ["pi-package", "cli", "router", "opencli", "cli-anything"],
+  "pi": {
+    "skills": ["./skills"]
+  },
   "license": "MIT",
   "bin": {
     "super-cli": "./dist/cli.js"
