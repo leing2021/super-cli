@@ -133,7 +133,7 @@ cli-hub install gimp
 ## 开发
 
 ```bash
-git clone https://github.com/user/super-cli.git
+git clone https://github.com/leing2021/super-cli.git
 cd super-cli
 npm install
 npm run build      # 编译 TypeScript

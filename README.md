@@ -133,7 +133,7 @@ Skip this step if you only use web/browser targets.
 ## Development
 
 ```bash
-git clone https://github.com/user/super-cli.git
+git clone https://github.com/leing2021/super-cli.git
 cd super-cli
 npm install
 npm run build      # compile TypeScript

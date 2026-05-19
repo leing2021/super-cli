@@ -12,6 +12,7 @@
     "registries/",
     "skills/",
     "README.md",
+    "README-CN.md",
     "LICENSE"
   ],
   "scripts": {
