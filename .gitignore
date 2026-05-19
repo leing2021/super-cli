@@ -2,6 +2,10 @@ node_modules/
 package-lock.json
 .context/
 .agent/
+# docs/ — only track published assets, NOT plans/brainstorms/solutions/
+docs/*
+!docs/assets/
+!docs/rules/
 .env*
 *.local.*
 *.tgz
