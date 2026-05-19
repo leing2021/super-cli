@@ -163,14 +163,57 @@ super-cli/
     └── report/         # 分析报告
 ```
 
-## AI Agent 使用说明
+## Agent 集成
 
-`super-cli` 同时面向人类和 AI Agent 设计。Agent 应：
+`super-cli` 为 AI Agent 设计。SKILL.md 遵循 [Agent Skills](https://agentskills.io/specification) 标准，Agent 可自动发现何时及如何使用。
 
-1. 阅读 `skills/super-cli/SKILL.md` 了解何时使用 super-cli
-2. 运行 `super-cli list -f json` 发现可用目标
-3. 运行 `super-cli <target> --help` 查看目标的具体命令
-4. 始终使用 `-f json` 获取结构化输出
+### Pi（重点支持）
+
+```bash
+# 第一步：全局安装 CLI 工具
+npm install -g @leing2021/super-cli
+
+# 第二步：在 pi 中注册 skill
+pi install npm:@leing2021/super-cli
+```
+
+Pi 启动时加载 skill 描述（约 100 bytes）。当任务涉及操控网站或桌面软件时，Agent 读取完整 SKILL.md，然后通过 `super-cli list -f json` 发现可用目标。
+
+### Claude Code
+
+```bash
+npm install -g @leing2021/super-cli
+mkdir -p ~/.claude/skills/super-cli
+cp "$(npm root -g)/@leing2021/super-cli/skills/super-cli/SKILL.md" \
+   ~/.claude/skills/super-cli/SKILL.md
+```
+
+或在 `.claude/settings.json` 添加：
+
+```json
+{ "skills": ["~/.claude/skills"] }
+```
+
+### OpenAI Codex
+
+```bash
+npm install -g @leing2021/super-cli
+mkdir -p ~/.codex/skills/super-cli
+cp "$(npm root -g)/@leing2021/super-cli/skills/super-cli/SKILL.md" \
+   ~/.codex/skills/super-cli/SKILL.md
+```
+
+### 任何支持 bash 的 Agent
+
+只需安装 CLI：
+
+```bash
+npm install -g @leing2021/super-cli
+```
+
+然后给 Agent 一条指令：
+
+> 用 `super-cli list -f json` 发现可用目标，用 `super-cli <target> --help` 查看具体命令，始终传 `-f json`。
 
 ## 许可证
 

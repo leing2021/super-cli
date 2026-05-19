@@ -163,14 +163,57 @@ super-cli/
     └── report/         # analysis reports
 ```
 
-## For AI agents
+## Agent Integration
 
-`super-cli` is designed for both humans and AI agents. Agents should:
+`super-cli` is designed for AI agents. The SKILL.md follows the [Agent Skills](https://agentskills.io/specification) standard so your agent knows when and how to use it.
 
-1. Read `skills/super-cli/SKILL.md` to know when to use super-cli
-2. Run `super-cli list -f json` to discover available targets
-3. Run `super-cli <target> --help` to see target-specific commands
-4. Always use `-f json` for structured output
+### Pi (Primary)
+
+```bash
+# Step 1: Install the CLI tool globally
+npm install -g @leing2021/super-cli
+
+# Step 2: Register the skill in pi
+pi install npm:@leing2021/super-cli
+```
+
+Pi loads the skill description on startup (~100 bytes). When a task involves controlling websites or desktop software, the agent reads the full SKILL.md, then discovers available targets via `super-cli list -f json`.
+
+### Claude Code
+
+```bash
+npm install -g @leing2021/super-cli
+mkdir -p ~/.claude/skills/super-cli
+cp "$(npm root -g)/@leing2021/super-cli/skills/super-cli/SKILL.md" \
+   ~/.claude/skills/super-cli/SKILL.md
+```
+
+Or add to `.claude/settings.json`:
+
+```json
+{ "skills": ["~/.claude/skills"] }
+```
+
+### OpenAI Codex
+
+```bash
+npm install -g @leing2021/super-cli
+mkdir -p ~/.codex/skills/super-cli
+cp "$(npm root -g)/@leing2021/super-cli/skills/super-cli/SKILL.md" \
+   ~/.codex/skills/super-cli/SKILL.md
+```
+
+### Any bash-capable agent
+
+If your agent can run bash commands, just install the CLI:
+
+```bash
+npm install -g @leing2021/super-cli
+```
+
+Then instruct it with a one-liner:
+
+> Use `super-cli list -f json` to discover available targets. Use `super-cli <target> --help` for target-specific commands. Always pass `-f json`.
 
 ## License
 
