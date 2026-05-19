@@ -1,0 +1,30 @@
+{
+  "name": "super-cli",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "极简 CLI 路由器 — 统一入口，自动路由到 OpenCLI 或 CLI-Anything 后端",
+  "license": "MIT",
+  "bin": {
+    "super-cli": "./dist/cli.js"
+  },
+  "files": [
+    "dist/",
+    "registries/",
+    "skills/",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@jackwener/opencli": "^1.7.22"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^3.0.0"
+  }
+}
