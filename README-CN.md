@@ -5,7 +5,7 @@
 极简 CLI 路由器 — 一个命令操控网站、浏览器、Electron 应用和桌面 GUI 软件。
 
 ```bash
-npm install -g super-cli
+npm install -g @leing2021/super-cli
 super-cli list              # 发现所有可用目标
 super-cli doctor            # 检查运行环境
 super-cli hackernews top -f json
@@ -27,7 +27,7 @@ super-cli make https://xiaohongshu.com
 
 ```bash
 # 1. 安装
-npm install -g super-cli
+npm install -g @leing2021/super-cli
 
 # 2. 看看有什么可用目标
 super-cli list
@@ -108,7 +108,7 @@ super-cli make https://github.com/blender/blender
 ### 第一步：安装 super-cli（含 OpenCLI）
 
 ```bash
-npm install -g super-cli
+npm install -g @leing2021/super-cli
 ```
 
 安装后，`super-cli hackernews top -f json` 及所有网站/浏览器目标立即可用。

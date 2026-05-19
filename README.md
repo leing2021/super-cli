@@ -5,7 +5,7 @@
 A minimalist CLI router — one command to control websites, browsers, Electron apps, and desktop GUI software.
 
 ```bash
-npm install -g super-cli
+npm install -g @leing2021/super-cli
 super-cli list              # discover all available targets
 super-cli doctor            # check your environment
 super-cli hackernews top -f json
@@ -27,7 +27,7 @@ Remember `super-cli`. Forget which backend does what.
 
 ```bash
 # 1. Install
-npm install -g super-cli
+npm install -g @leing2021/super-cli
 
 # 2. See what's available
 super-cli list
@@ -108,7 +108,7 @@ The `make` command prints step-by-step guidance. The actual adapter/harness is c
 ### Step 1: Install super-cli (includes OpenCLI)
 
 ```bash
-npm install -g super-cli
+npm install -g @leing2021/super-cli
 ```
 
 After this, `super-cli hackernews top -f json` and all web/browser targets work immediately.
